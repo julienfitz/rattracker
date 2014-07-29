@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140729185518) do
   create_table "rat_sightings", force: true do |t|
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_date"
+    t.string   "created_date"
     t.string   "location_type"
     t.integer  "zip"
     t.string   "address"

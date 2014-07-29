@@ -20,3 +20,10 @@ Extra Cool Junk
 -make some fun front end rat themed stuff<br>
 -find top rat infested neighborhoods or buildings or blocks/areas and share it<br>
 -making map dot bigger for buildings/areas with multiple complaints
+
+
+7/29/14
+Things to do right now. 4pm
+1. Set up the index page with zip input form (view) and display data on show page
+2. Set up the controller with index and show(with params)
+3. Set up the Google Maps API (reverse geocoding) to fill in blank spaces in database.
