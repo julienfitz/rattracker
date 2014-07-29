@@ -5,7 +5,7 @@ FactoryGirl.define do
     latitude ""
     longitude ""
     created_date ""
-    location_type, "MyString"
+    location_type "MyString"
     zip ""
     address "MyString"
   end
