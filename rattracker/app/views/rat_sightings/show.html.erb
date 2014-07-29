@@ -1,0 +1,7 @@
+<h1>Here are the last rat sightings in your zip code</h1>
+
+<ul>
+  <%= @rat_sightings.each do |rat_sighting| %>
+    <li><%= rat_sighting %></li>
+  <% end %>
+</ul>
