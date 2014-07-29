@@ -8,7 +8,8 @@ Minimal Loveable Product
 -read up on D3 and how it works with csv<br>
 -show page displaying data (not necessarily D3, maybe raw data)<br>
 -make scatter plot<br>
--make Google Maps plotted out spots page
+-make Google Maps plotted out spots page<br>
+-limit data to the past year
 
 Extra Cool Junk
 <br>
