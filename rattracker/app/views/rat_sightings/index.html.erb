@@ -1,8 +1,8 @@
 <h1>Where are you looking for rats?</h1>
 
-<%= form_tag("/show") do %>
-  <%= label_tag 'zip', 'Zip Code' %>
-  <%= text_field_tag 'zip' %>
+<%= form_tag(rat_sightings_path) do %>
+  <%= label_tag 'rat_sightings[zip]', 'Zip Code' %>
+  <%= text_field_tag 'rat_sightings[zip]' %>
 
   <%= submit_tag 'Submit your zip code' %>
 <% end %>
