@@ -7,7 +7,7 @@ def show
 end
 
 def create
-  @rat_sightings = RatSighting.zip_specific_sightings(rat_sighting_params[:zip])
+  @rat_sightings = RatSighting.zip_specific_sightings(rat_sighting_params[:zip].to_i)
   render 'rat_sightings/show.html'
 end
 
