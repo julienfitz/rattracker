@@ -21,9 +21,16 @@ Extra Cool Junk
 -find top rat infested neighborhoods or buildings or blocks/areas and share it<br>
 -making map dot bigger for buildings/areas with multiple complaints
 
+7/30/14<br>
+Goals for today:<br>
+1. Set up the Google Maps API (reverse geocoding) to fill in blank spaces in database.<br>
+2. Migrate to postgres<br>
+3. Get scatter plot working<br>
 
-7/29/14
-Things to do right now. 4pm
-1. Set up the index page with zip input form (view) and display data on show page
-2. Set up the controller with index and show(with params)
+
+
+7/29/14<br>
+Things to do right now. 4pm<br>
+1. Set up the index page with zip input form (view) and display data on show page<br>
+2. Set up the controller with index and show(with params)<br>
 3. Set up the Google Maps API (reverse geocoding) to fill in blank spaces in database.
