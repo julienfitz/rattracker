@@ -20,7 +20,9 @@ end
 private
 
   def parseAddress(address)
-    
+    RatSighting.all.select do |rat_sighting|
+      rat_sighting.zip == address["zip"].to_i
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
