@@ -1,3 +1,6 @@
+<script src = "http://d3js.org/d3.v3.min.js"></script>
+<script src = "../app/assets/javascripts/ratBubbles.js"></script>
+
 <h1>Here are the last rat sightings in your zip code</h1>
 <h2><%= link_to 'Back' %></h2>
 
@@ -10,3 +13,8 @@
     <% end %>
   <% end %>
 </ul>
+
+<p>
+<div class="bubble-chart"></div>
+<script src="ratBubbles.js"></script>
+</p>
