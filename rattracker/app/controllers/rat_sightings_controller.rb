@@ -1,6 +1,11 @@
 class RatSightingsController < ApplicationController
 
 def index
+  @rat_sightings = RatSighting.all
+  respond_to do |format|
+    format.html
+    format.json {render json: @rat_sightings}
+  end
 end
 
 def show

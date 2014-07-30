@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require addressFiller
 //= require_tree .
