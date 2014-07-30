@@ -1,29 +1,21 @@
-//iterate over address fields in database
-//identify empty address fields
-//if address field is empty, use lat/long to populate it 
-//     -reverse geocaching to grab address
+$(document).ready( function() { codeLatLng();});
 
 function codeLatLng() {
   console.log("This is running");
-  var coordinates = getCoordinates();
-  // var locationArray = parseCoordinates(coordinates);
-  console.log(coordinates);
-  
+  var coordinates = getCoordinates();  
 }
 
 function revgeocode(locationArray){
   var geocoder = new google.maps.Geocoder();
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 2000; i++) {
     var lat = locationArray[i][0];
     var lng = locationArray[i][1];
     var latlng = new google.maps.LatLng(lat, lng);
     geocoder.geocode({'latLng': latlng}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-        // if (results[1]) {
-          console.log(results[0]);
-          console.log(results[1]);
-          console.log(results[2]);
-        // }
+        if (results) {
+          saveData(results);
+        }
       } else {
         alert("Geocoder failed due to: " + status);
       }
@@ -32,9 +24,8 @@ function revgeocode(locationArray){
 }
 
 function parseCoordinates(coordinates){
-  
   var latLong = [];
-  for(var i = 0; i < coordinates.length; i++){
+  for(var i = 0; i < 2000; i++){
     latLong.push([coordinates[i].latitude, coordinates[i].longitude]);
   }
   console.log("parsing coordinates");
@@ -42,7 +33,6 @@ function parseCoordinates(coordinates){
 }
 
 function getCoordinates() {
-  
   $.ajax({
     url: "/rat_sightings.json",
     dataType: "JSON",
@@ -53,27 +43,18 @@ function getCoordinates() {
   });
 }
 
-$(document).ready( function() { codeLatLng();});
+function saveData(results) {
+  geoAddress = parseAddress(results);
+  $.ajax({
+    url: "/rat_sightings",
+    type: 'POST',
+    dataType: 'JSON',
+    data: {rat_sighting: {address: geoAddress}},
+    success: function() {console.log("Address has been parsed");},
+    error: function() {alert("Save failed");}
+  });
+}
 
-// $.ajax({
-//   url: "/lists.json",
-//   dataType: "JSON",
-//   success: function(response){
-//     response.forEach(function(obj){
-//       that.createList(obj);
-//     });
-//   },
-//   error: function(){alert("failure!");}
-// });
-
-// $.ajax({
-//   url: "/lists/" + listId,
-//   type: "DELETE",
-//   dataType: "JSON",
-//   data: {list: {id: listId}},
-//   success: function(){
-//     $deletedList.closest(".list").remove();
-//     List.delete(listId);
-//   },
-//   error: function(){alert("failure!");}
-// });
+function parseAddress(results) {
+  return results.split(",")[0];
+}

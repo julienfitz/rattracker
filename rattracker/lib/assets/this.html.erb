@@ -12,6 +12,8 @@
 
     <body>
         <script>
+        var ratData;
+
         var map = new google.maps.Map(d3.select("#map_canvas").node(), 
             {
           zoom: 12,
@@ -19,7 +21,7 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
-        d3.csv("/db/rat_sightings.csv", function(error, data) 
+        d3.select(ratData, function(data) 
         {
             var overlay = new google.maps.OverlayView();
             overlay.draw = function() {
@@ -37,13 +39,32 @@
                 })
                 .attr("r", 5)
                 .style("fill", "blue");     
-        }
-        overlay.setMap(map);
-        overlay.onAdd = function() {
-        var layer = d3.select(this.getPanes().overlayLayer).append("div")
-        .attr("class", "stations");
-        }
+            }
+            overlay.setMap(map);
+            overlay.onAdd = function() {
+            var layer = d3.select(this.getPanes().overlayLayer).append("div")
+            .attr("class", "stations");
+            }
         });
+
+        function getCoordinates() {
+          $.ajax({
+            url: "/rat_sightings.json",
+            dataType: "JSON",
+            success: function(response){
+              parseCoordinates(response);
+            }, 
+            error: function(){alert("failure!");}
+          });
+        }
+
+        function parseCoordinates(coordinates){
+          var latLong = [];
+          for(var i = 0; i < coordinates.length; i++){
+            latLong.push([coordinates[i].latitude, coordinates[i].longitude]);
+          }
+          ratData = latLong;
+        }
 
         // function initialize() {
         //     var map = new google.maps.Map(document.getElementbyID("map_canvas"), {

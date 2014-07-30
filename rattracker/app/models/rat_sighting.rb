@@ -1,6 +1,4 @@
-
 class RatSighting < ActiveRecord::Base
-
 
   def self.zip_specific_sightings(params_zip)
     if params_zip == 0
@@ -11,6 +9,5 @@ class RatSighting < ActiveRecord::Base
       end
     end
   end
-
 
 end
