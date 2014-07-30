@@ -1,0 +1,12 @@
+<h1>Here are the last rat sightings in your zip code</h1>
+<h2><%= link_to 'Back' %></h2>
+
+<ul>
+  <% if @rat_sighting_zips.class.name == "String" %>
+    <%= @rat_sighting_zips %>
+  <% else %>
+    <% @rat_sighting_zips.each do |rat_sighting| %>
+      <li><%= rat_sighting.address %>, <%= rat_sighting.created_date %></li>
+    <% end %>
+  <% end %>
+</ul>

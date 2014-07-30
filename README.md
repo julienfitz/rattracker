@@ -1,36 +1,40 @@
-TODO
+# Rattracker
 
-Minimal Loveable Product
-<br>
--make root page with a form for zipcode<br>
--read up on conversion of csv into SQL form<br>
--make sure data formats match SQL<br>
--read up on D3 and how it works with csv<br>
--show page displaying data (not necessarily D3, maybe raw data)<br>
--make scatter plot<br>
--make Google Maps plotted out spots page<br>
--limit data to the past year
+## Description
 
-Extra Cool Junk
-<br>
--have a live feed<br>
--convert zipcodes to neighborhoods<br>
--put it on a single page<br>
--date selector to choose date range<br>
--make some fun front end rat themed stuff<br>
--find top rat infested neighborhoods or buildings or blocks/areas and share it<br>
--making map dot bigger for buildings/areas with multiple complaints
+Add a short description of your app.
 
-7/30/14<br>
-Goals for today:<br>
-1. Set up the Google Maps API (reverse geocoding) to fill in blank spaces in database.<br>
-2. Migrate to postgres<br>
-3. Get scatter plot working<br>
+## Screenshots
 
+Add some spiffy screenshots of your app here.
 
+## Background
 
-7/29/14<br>
-Things to do right now. 4pm<br>
-1. Set up the index page with zip input form (view) and display data on show page<br>
-2. Set up the controller with index and show(with params)<br>
-3. Set up the Google Maps API (reverse geocoding) to fill in blank spaces in database.
+Why did you want to make this app? What was your development process
+like?
+
+## Features
+
+Bullet point some of the key features of your app here.
+
+## Usage
+
+How do users use your app?
+
+## Development/Contribution
+
+Explain how people can contribute to your app. How should they write tests?
+Any things in particular you'd like to see in pull requests?
+
+## Future
+
+What features are you currently working on? Only mention things that you
+actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
+
+## Author
+
+Link to your blog, twitter, etc!
+
+## License
+
+Rattracker is MIT Licensed. See LICENSE for details.
