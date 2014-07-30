@@ -3,8 +3,12 @@
 <head>
   <title>Rattracker</title>
   <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBUakDsIssIu0GPXFQzYPWZ8Cu1np6gSYM' %>
+  <%= javascript_include_tag 'http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.8/d3.min.js'%>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+
+
   <%= csrf_meta_tags %>
 </head>
 <body>

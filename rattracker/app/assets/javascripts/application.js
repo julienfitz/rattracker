@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require addressFiller
 //= require ratBubbles
-//= require_tree .
+//= require d3
