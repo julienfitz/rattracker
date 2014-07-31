@@ -1,23 +1,24 @@
 
-    // $(document).ready(function () {
-    //     var coords = [];
-    //     function queryDb() {
+    $(document).ready(function () {
+        var coords = [];
+        function queryDb() {
           
-    //       $.ajax({
-    //         url: "/rat_sightings.json",
-    //         dataType: "JSON",
-    //         success: function(response){
-    //           for(var i = 0; i < 100; i++){
-    //             coords.push([response[i].latitude, response[i].longitude]);
-    //             }
-    //             console.log(coords)
-    //             mapGenerator();
-    //         }, 
-    //         error: function(){alert("failure!");}
-    //       });
-    //     }
+          $.ajax({
+            url: "/rat_sightings.json",
+            dataType: "JSON",
+            success: function(response){
+              for(var i = 0; i < 100; i++){
+                coords.push([response[i].latitude, response[i].longitude, response[i].created_date, response[i].location_type, response[i].zip, response[i].address]);
+                }
+                console.log(coords)
+                mapGenerator();
+            }, 
+            error: function(){alert("failure!");}
+          });
+        }
 
-    //     queryDb();
+        queryDb();
+     });   
 
     //     var map = new google.maps.Map(d3.select("#map-canvas").node(), {
     //           zoom: 12,
