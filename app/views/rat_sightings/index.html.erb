@@ -4,11 +4,5 @@
 <div id="map-canvas">map</div>
 
 <ul>
-  <% if @rat_sighting_addresses.class.name == "String" %>
-    <%= @rat_sighting_addresses %>
-  <% else %>
-    <% @rat_sighting_addresses.each do |rat_sighting| %>
-      <li><%= rat_sighting.address %>, <%= rat_sighting.created_date %></li>
-    <% end %>
-  <% end %>
+
 </ul>

@@ -20,15 +20,16 @@ function codeAddress(address) {
 }
 
 function geocodeToRails(results) {
+  console.log(results);
   $.ajax({
     url: '/rat_sightings',
     type: 'POST',
     dataType: 'JSON',
-    data: JSON.stringify(results['address_components'][8]['long_name']),
-    success: function() {
-      console.log('Sent to Rails!');
-    },
-    error: function(response){alert('Failure');}
+    data: {zipcode: results['address_components'][8]['long_name']},
+    error: function(response){
+      eval(response.responseText);
+    }
+
   });
 }
 
