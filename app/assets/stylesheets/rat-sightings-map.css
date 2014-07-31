@@ -1,0 +1,38 @@
+html, body, #map-canvas {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+ 
+.rats, .rats svg {
+  position: absolute;
+}
+ 
+.rats svg {
+  width: 60px;
+  height: 20px;
+  padding-right: 100px;
+  font: 10px sans-serif;
+}
+ 
+.rats circle {
+  fill: brown;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+.rats circle:hover {
+  fill: white;
+  cursor: pointer; }
+
+.rats_text {
+  background-color: white;
+  fill: black;
+  opacity: 0.0;
+  }
+
+.rats_text:hover {
+  fill: black;
+  opacity: 1.0;
+  cursor: pointer;
+}

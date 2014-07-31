@@ -1,6 +1,6 @@
 function submitListener() {
   var $submit = $('input[type="submit"]'),
-      $address = $('#rat_sightings_zip');
+      $address = $('#rat_sightings_address');
   $submit.click(function(event) {
     codeAddress($address.val());
     $address.val('');
@@ -9,9 +9,11 @@ function submitListener() {
 };
 
 function codeAddress(address) {
+  console.log(address);
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode({'address': address}, function(results, status) {
     console.log(results);
+    debugger
     if (status == google.maps.GeoCoderStatus.OK) {
       geocodeToRails(results);
     } else {
