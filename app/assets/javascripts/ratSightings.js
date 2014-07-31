@@ -49,15 +49,22 @@ $(window).load(function(){
           .attr("cx", padding)
           .attr("cy", padding);
  
-      var textbox = 
+      
 
       // Add a label.
       marker.append("svg:text")
-          .attr("x", padding + 7)
+          .attr("x", padding -5)
           .attr("y", padding)
-          .attr("dy", ".31em")
+          .attr("dy", "1em")
           .attr("class","rats_text")
           .text(function(d) { return d.value[2]; });
+
+      marker.append("svg:text")
+          .attr("x", padding - 5)
+          .attr("y", padding)
+          .attr("dy", ".01em")
+          .attr("class","rats_text")
+          .text(function(d) { return d.value[5]; });
 
       function transform(d) {
         d = new google.maps.LatLng(d.value[0], d.value[1]);
