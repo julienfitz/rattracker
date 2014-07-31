@@ -1,11 +1,10 @@
-<h1>Where are you looking for rats?</h1>
+<h1>Here are the last rat sightings in your zip code</h1>
+<h2><%= link_to 'Back' %></h2>
 
-<%= form_tag(rat_sightings_path) do %>
-  <%= label_tag 'rat_sightings[address]', 'Address' %>
-  <%= text_field_tag 'rat_sightings[address]' %>
+<div id="map-canvas">map</div>
 
-  <%= submit_tag 'Submit your address' %>
-<% end %>
+<ul>
 
 
-<div id="map-canvas"></div>
+</ul>
+

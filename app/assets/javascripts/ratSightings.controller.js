@@ -9,13 +9,10 @@ function submitListener() {
 };
 
 function codeAddress(address) {
-  console.log(address);
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode({'address': address}, function(results, status) {
-    console.log(results);
-    debugger
-    if (status == google.maps.GeoCoderStatus.OK) {
-      geocodeToRails(results);
+    if (status == google.maps.GeocoderStatus.OK) {
+      geocodeToRails(results[0]);
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
@@ -23,14 +20,16 @@ function codeAddress(address) {
 }
 
 function geocodeToRails(results) {
+  console.log(results);
   $.ajax({
     url: '/rat_sightings',
     type: 'POST',
-    dataType: 'json',
-    success: function(response) {
-      console.log('Sent to Rails!');
-    },
-    error: function(){alert('Failure!');}
+    dataType: 'JSON',
+    data: {zipcode: results['address_components'][8]['long_name']},
+    error: function(response){
+      eval(response.responseText);
+    }
+
   });
 }
 
