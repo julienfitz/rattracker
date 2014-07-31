@@ -28,7 +28,6 @@ Goals for today:<br>
 3. Get scatter plot working<br>
 
 
-
 7/29/14<br>
 Things to do right now. 4pm<br>
 1. Set up the index page with zip input form (view) and display data on show page<br>
