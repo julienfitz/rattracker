@@ -49,6 +49,8 @@ $(window).load(function(){
           .attr("cx", padding)
           .attr("cy", padding);
  
+      var textbox = 
+
       // Add a label.
       marker.append("svg:text")
           .attr("x", padding + 7)
