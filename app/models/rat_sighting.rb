@@ -1,4 +1,5 @@
 class RatSighting < ActiveRecord::Base
+  belongs_to :zip_code
 
   def self.zip_specific_sightings(params_zip)
     params_zip == 0 ? "That is not a valid zip code" : self.same_zip_sightings(params_zip)
