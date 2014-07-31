@@ -1,7 +1,7 @@
 $(window).load(function(){
 
   var map = new google.maps.Map(d3.select("#map-canvas").node(), {
-    zoom: 11,
+    zoom: 15,
     center: new google.maps.LatLng(40.7199792,-73.9725163),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
@@ -55,9 +55,8 @@ $(window).load(function(){
           .attr("y", padding)
           .attr("dy", ".31em")
           .attr("class","rats_text")
-          .text(function(d) { return d.value[2]; })
-          .on("mouseover", function(){ return rats_text.style("visibility", "visible");})
-          .on("mouseout", function(){ return rats_text.style("visibility", "hidden");});     
+          .text(function(d) { return d.value[2]; });
+
       function transform(d) {
         d = new google.maps.LatLng(d.value[0], d.value[1]);
         d = projection.fromLatLngToDivPixel(d);
