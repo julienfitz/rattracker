@@ -1,29 +1,37 @@
-function RatSightingsController () {
-
-}
-
-RatSightingsController.prototype.submitListener = function() {
+function submitListener() {
   var $submit = $('input[type="submit"]'),
-      $address = $('#rat_sightings_zip').val();
-  $submit.submit(function() {
-    formattedAddress = codeAddress($address);
-    console.log(formattedAddress);
+      $address = $('#rat_sightings_zip');
+  $submit.click(function(event) {
+    codeAddress($address.val());
+    $address.val('');
+    event.preventDefault();
   });
-}
-
-RatSightingsController.prototype.init = function() {
-  this.submitListener();
-}
+};
 
 function codeAddress(address) {
-  var formattedAddress;
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode({'address': address}, function(results, status) {
+    console.log(results);
     if (status == google.maps.GeoCoderStatus.OK) {
-      formattedAddress = results;
+      geocodeToRails(results);
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
-  return formattedAddress;
 }
+
+function geocodeToRails(results) {
+  $.ajax({
+    url: '/rat_sightings',
+    type: 'POST',
+    dataType: 'json',
+    success: function(response) {
+      console.log('Sent to Rails!');
+    },
+    error: function(){alert('Failure!');}
+  });
+}
+
+$(function init() {
+  submitListener();
+});
