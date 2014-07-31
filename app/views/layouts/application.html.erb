@@ -24,16 +24,25 @@ html, body, #map-canvas {
 .rats, .rats svg {
   position: absolute;
 }
- 
+
 .rats svg {
   width: 60px;
   height: 20px;
   padding-right: 100px;
   font: 10px sans-serif;
+  color: transparent;
+}
+
+.rats svg:hover {
+  width: 60px;
+  height: 20px;
+  padding-right: 100px;
+  font: 10px sans-serif;
+  color: black;
 }
  
 .rats circle {
-  fill: brown;
+  fill: red;
   stroke: black;
   stroke-width: 1.5px;
 }
@@ -43,14 +52,14 @@ html, body, #map-canvas {
 
 .rats_text {
   fill: black;
-  visibility: hidden;
-  }
-/*
-.rats text:hover {
+  opacity: 0.0;
+}
+
+.rats_text:hover {
   fill: black;
-  display: inline !important;
+  opacity:1.0;
   cursor: pointer;
-}*/
+}
         
 
  

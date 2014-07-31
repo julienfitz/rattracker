@@ -50,6 +50,9 @@
                     .enter().append("svg:svg")
                       .each(transform)
                       .attr("class", "marker");
+
+                  var infowindow = new google.maps.InfoWindow();
+                    
              
                   // Add a circle.
                   marker.append("svg:circle")
@@ -63,11 +66,24 @@
                       .attr("y", padding)
                       .attr("dy", ".31em")
                       .attr("class","rats_text")
-                      .text(function(d) { return d.value[2]; })
-                      .on("mouseover", function(){ return rats_text.style("visibility", "visible");})
-                      .on("mouseout", function(){ return rats_text.style("visibility", "hidden");});
+                      .text(function(d) { return d.value[2]; return d.value[3]; });
+                      // .on("mouseover", function(){ return rats_text.style("visibility", "visible");})
+                      // .on("mouseout", function(){ return rats_text.style("visibility", "hidden");});
 
-                  // google.maps.event.addListener(marker, "click", function(){return marker_text.style("visibility", "visible");});
+                  // marker.append(InfoWindow)
+                  //     .attr("x", padding + 7)
+                  //     .attr("y", padding)
+                  //     .attr("dy", ".31em")
+                  //     .attr("class","rats_text")
+                  //     .style("visibility", "hidden")
+                  //     .text(function(d) { return d.value[3]; });
+
+                  // google.maps.event.addListener(marker, 'mouseover', (function(marker) {
+                  //     return function() {
+                  //     infowindow.setContent(d.value[3]);
+                  //     infowindow.open(map, marker);
+                  // }
+                  // })(marker));
                   // google.maps.event.addListener(marker, "click", function(){return marker_text.style("visibility", "hidden");});
              
                   function transform(d) {
@@ -84,7 +100,9 @@
             overlay.setMap(map);
          }
          mapGenerator();
-
+            $(".rats_text").click(function() {   
+              $(this).css("visibility","inline");  
+            }); 
         });
 
      </script>
