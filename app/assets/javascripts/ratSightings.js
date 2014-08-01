@@ -1,9 +1,14 @@
+var map;
 $(window).load(function(){
+  
 
-  var map = new google.maps.Map(d3.select("#map-canvas").node(), {
-    zoom: 15,
+  map = new google.maps.Map(d3.select("#map-canvas").node(), {
+    zoom: 13,
+
     center: new google.maps.LatLng(40.7199792,-73.9725163),
+    //center: new google.maps.LatLng(xy.latitude,xy.longitude),
     mapTypeId: google.maps.MapTypeId.ROADMAP
+
   });
 
   function mapGenerator(){
