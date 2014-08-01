@@ -4,6 +4,7 @@ $(window).load(function(){
 
   map = new google.maps.Map(d3.select("#map-canvas").node(), {
     zoom: 13,
+
     center: new google.maps.LatLng(40.7199792,-73.9725163),
     //center: new google.maps.LatLng(xy.latitude,xy.longitude),
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -83,4 +84,6 @@ $(window).load(function(){
   overlay.setMap(map);
   }
   mapGenerator();
+  $("#map-canvas").hide();
+  $("#here-are-rats").hide();
 });

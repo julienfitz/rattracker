@@ -18,9 +18,10 @@ end
 private
 
   def parseAddress(address)
-    RatSighting.all.select do |rat_sighting|
+    rat_sightings = RatSighting.all.select do |rat_sighting|
       rat_sighting.zip == address["zipcode"].to_i
     end
+    rat_sightings.empty? ? "There are no rats in your area. Lucky you!" : rat_sightings
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

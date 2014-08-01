@@ -38,12 +38,14 @@ function createCoordinates(results){
 
 function geocodeToRails(results) {
   console.log(results);
-  
+
+  var add_comp = results["address_components"];
+
   $.ajax({
     url: '/rat_sightings',
     type: 'POST',
     dataType: 'JSON',
-    data: {zipcode: results['address_components'][8]['long_name']},
+    data: {zipcode: add_comp[add_comp.length - 1]['long_name']},
     error: function(response){
       eval(response.responseText);
 
