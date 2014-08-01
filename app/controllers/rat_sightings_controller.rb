@@ -1,16 +1,10 @@
 class RatSightingsController < ApplicationController
 
-def home
-end
-
 def index
-  if @rat_sighting_addresses
-    respond_to do |format|
-      format.html
-      format.json {render json: @rat_sighting_addresses}
-    end
-  else
-    redirect_to 'root'
+  @rat_sighting_addresses = RatSighting.all
+  respond_to do |format|
+    format.html
+    format.json {render json: @rat_sighting_addresses}
   end
 end
 
