@@ -79,6 +79,5 @@ $(window).load(function(){
   overlay.setMap(map);
   }
   mapGenerator();
-  $("#map-canvas").hide();
   $("#here-are-rats").hide();
 });
