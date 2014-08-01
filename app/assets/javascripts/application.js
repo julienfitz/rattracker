@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require ratSightings.controller
 //= require ratSightings
+//= require js/bootstrap.min
+//= require js/cbpAnimatedHeader.min
+//= require js/freelancer
