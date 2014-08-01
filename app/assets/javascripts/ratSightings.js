@@ -1,3 +1,4 @@
+document.body.style.backgroundImage="url('background.jpg')";
 $(window).load(function(){
 
   var map = new google.maps.Map(d3.select("#map-canvas").node(), {
