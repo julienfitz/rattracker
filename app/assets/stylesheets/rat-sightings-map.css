@@ -4,6 +4,20 @@ html, body, #map-canvas {
   margin: 0;
   padding: 0;
 }
+
+#map-canvas {
+  float: left;
+}
+
+#list {
+  display: inline-block;
+}
+
+body {
+  background-image: url("background.jpg");
+  color: white;
+  text-align: center
+}
  
 .rats, .rats svg {
   position: absolute;

@@ -19,8 +19,26 @@ function codeAddress(address) {
   });
 }
 
+
+
+var config = {
+  writable: true,
+  enumerable: true,
+  configurable: true
+};
+
+var xy;
+
+function createCoordinates(results){
+  xy = Object.create(null);
+  xy['latitude'] = results['geometry']['location']['k'];
+  xy['longitude'] = results['geometry']['location']['B'];
+}
+
+
 function geocodeToRails(results) {
   console.log(results);
+  
   $.ajax({
     url: '/rat_sightings',
     type: 'POST',
@@ -28,6 +46,10 @@ function geocodeToRails(results) {
     data: {zipcode: results['address_components'][8]['long_name']},
     error: function(response){
       eval(response.responseText);
+
+      createCoordinates(results);
+      var centerAt = new google.maps.LatLng(xy.latitude, xy.longitude);
+      map.setCenter(centerAt);
     }
 
   });

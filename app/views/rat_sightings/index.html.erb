@@ -1,4 +1,6 @@
-<h1>Where are you looking for rats?</h1>
+<h1>Rat Tracker</h1>
+
+<h3>Search NYC for Rat Sightings</h3>
 
 <%= form_tag(rat_sightings_path) do %>
   <%= label_tag 'rat_sightings[address]', 'Address' %>
@@ -7,12 +9,12 @@
   <%= submit_tag 'Submit your address' %>
 <% end %>
 
-<h1>Here are the last rat sightings in your zip code</h1>
+<h3>Here are the last rat sightings in your zip code</h3>
 
 <div id="map-canvas">map</div>
 
+<div id="list">
 <ul>
 
-
 </ul>
-
+</div>
