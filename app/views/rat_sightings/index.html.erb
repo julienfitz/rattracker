@@ -1,12 +1,9 @@
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-          <a class="navbar-brand" href="#page-top">Rat Tracker</a>
+          <a class="navbar-brand" href="#form">Rat Tracker</a>
         </div>
-
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -30,59 +27,42 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="img/profile.png" alt="">
+                <img class="img-responsive" src="assets/mouse.png" alt="">
                 <div class="intro-text">
                     <span class="name">Rat Tracker</span>
                     <hr class="star-light">
                     <h1>Where are you looking for rats?</h1>
-
-
-                    <%= form_tag(rat_sightings_path) do %>
-                      <%= label_tag 'rat_sightings[address]', 'Address' %>
-                      <%= text_field_tag 'rat_sightings[address]' %>
-
-
-                      <%= submit_tag 'Submit your address' %>
-                    <% end %>
+                    <div id="form">
+                      <%= form_tag(rat_sightings_path) do %>
+                        <%= label_tag 'rat_sightings[address]', 'Address' %>
+                        <%= text_field_tag 'rat_sightings[address]' %>
+                        <span class="page-scroll">
+                          <a href="#map"><%= submit_tag 'Submit your address'%></a>
+                        </span>
+                      <% end %>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-
 <section id="map">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Map</h2>
+                <h2 id="map-header">Map</h2>
                 <hr class="star-primary">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 map-item">
-                <a href="#mapModal1" class="map-link" data-toggle="modal">
-                    <div class="caption">
-                        <div class="caption-content">
-                          <div id="map-canvas">map</div>
-                        </div>
-                    </div>
-                    <img src="img/map/cabin.png" class="img-responsive" alt="">
-                </a>
-            </div>
-            <div class="col-sm-4 map-item">
-                <a href="#mapModal2" class="map-link" data-toggle="modal">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <h2 id="here-are-rats">Here are the latest rat sightings in your zip code:</h2>
-                            <div id="addresses">
-                              <ul></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="img/map/cake.png" class="img-responsive" alt="">
-                </a>
-            </div>
+          <div id="map-canvas" class="col-sm-4 map-item">map</div>
+
+          <div id="addresses" class="col-sm-4 map-item">
+            <p id="here-are-rats"><strong>Here are the latest rat sightings in your zip code:</strong></p>
+            <ul id="rat-sightings"></ul>
+          </div>
+
         </div>
     </div>
 </section>
@@ -97,14 +77,13 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                <p>Whether you are moving to a new neighborhood or just curious about your own, Rat Tracker can help you be aware of rodent complaints in New York City.</p>
             </div>
             <div class="col-lg-4">
-                <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                <p>Created at the Flatiron School by: <br>
+                  Liz Baillie, Justin Kim, and Ben Shore</p>
+                <p style="font-size: 0.75em">Image courtesy of Neel Mehta. Licensed via Creative Commons Attribution Share</p>
             </div>
         </div>
     </div>
 </section>
-
-
-

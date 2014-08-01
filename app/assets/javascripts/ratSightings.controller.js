@@ -52,6 +52,7 @@ function geocodeToRails(results) {
       createCoordinates(results);
       var centerAt = new google.maps.LatLng(xy.latitude, xy.longitude);
       map.setCenter(centerAt);
+      map.setZoom(15);
     }
 
   });

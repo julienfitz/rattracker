@@ -1,19 +1,13 @@
 var map;
 $(window).load(function(){
-  
-
   map = new google.maps.Map(d3.select("#map-canvas").node(), {
-    zoom: 13,
-
+    zoom: 12,
     center: new google.maps.LatLng(40.7199792,-73.9725163),
-    //center: new google.maps.LatLng(xy.latitude,xy.longitude),
     mapTypeId: google.maps.MapTypeId.ROADMAP
-
   });
 
   function mapGenerator(){
     var coords = [];
-
     $.ajax({
       url: "/rat_sightings.json",
       dataType: "JSON",
@@ -29,12 +23,11 @@ $(window).load(function(){
 
   function overlayMap(rats){
     var overlay = new google.maps.OverlayView();
-      
     // Add the container when the overlay is added to the map.
   overlay.onAdd = function() {
     var layer = d3.select(this.getPanes().overlayMouseTarget).append("div")
         .attr("class", "rats");
- 
+
     // Draw each marker as a separate SVG element.
     // We could use a single SVG, but what size would it have?
     overlay.draw = function() {
@@ -53,9 +46,7 @@ $(window).load(function(){
           .attr("r", 4.5)
           .attr("cx", padding)
           .attr("cy", padding);
- 
-      
-
+          
       // Add a label.
       marker.append("svg:text")
           .attr("x", padding -5)
@@ -84,6 +75,5 @@ $(window).load(function(){
   overlay.setMap(map);
   }
   mapGenerator();
-  $("#map-canvas").hide();
   $("#here-are-rats").hide();
 });
