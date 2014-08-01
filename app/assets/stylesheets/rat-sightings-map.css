@@ -10,10 +10,11 @@ html, body, #map-canvas {
 }
  
 .rats svg {
-  width: 60px;
-  height: 20px;
-  padding-right: 100px;
-  font: 10px sans-serif;
+  width: 180px;
+  height: 50px;
+  /*padding-right: 100px;*/
+  font: 14px sans-serif;
+  text-shadow: 1px 1px 1px 1px #fff;
 }
  
 .rats circle {
@@ -23,7 +24,8 @@ html, body, #map-canvas {
 }
 .rats circle:hover {
   fill: white;
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.0; }
 
 .rats_text {
   background-color: white;
@@ -34,5 +36,6 @@ html, body, #map-canvas {
 .rats_text:hover {
   fill: black;
   opacity: 1.0;
+  text-shadow: 1px 1px 1px 1px #fff;
   cursor: pointer;
 }
