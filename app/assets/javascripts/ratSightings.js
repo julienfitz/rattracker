@@ -1,7 +1,7 @@
 $(window).load(function(){
 
   var map = new google.maps.Map(d3.select("#map-canvas").node(), {
-    zoom: 13,
+    zoom: 15,
     center: new google.maps.LatLng(40.7199792,-73.9725163),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
@@ -79,4 +79,6 @@ $(window).load(function(){
   overlay.setMap(map);
   }
   mapGenerator();
+  $("#map-canvas").hide();
+  $("#here-are-rats").hide();
 });
