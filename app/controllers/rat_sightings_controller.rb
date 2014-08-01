@@ -1,30 +1,27 @@
 class RatSightingsController < ApplicationController
 
-def home
-end
-
 def index
-  if @rat_sighting_addresses
-    respond_to do |format|
-      format.html
-      format.json {render json: @rat_sighting_addresses}
-    end
-  else
-    redirect_to 'root'
+  @rat_sighting_addresses = RatSighting.all
+  respond_to do |format|
+    format.html
+    format.json {render json: @rat_sighting_addresses}
   end
 end
 
 def create
   @rat_sighting_addresses = parseAddress(params)
-  render 'rat_sightings/index.html'
+  respond_to do |format|
+    format.js 
+  end
 end
 
 private
 
   def parseAddress(address)
-    RatSighting.all.select do |rat_sighting|
-      rat_sighting.zip == address
+    rat_sightings = RatSighting.all.select do |rat_sighting|
+      rat_sighting.zip == address["zipcode"].to_i
     end
+    rat_sightings.empty? ? "There are no rats in your area. Lucky you!" : rat_sightings
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
