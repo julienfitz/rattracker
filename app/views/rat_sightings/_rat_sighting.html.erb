@@ -1,3 +1,7 @@
-<% @rat_sighting_addresses.each do |rat_sighting| %>
-  <li><%= rat_sighting.address %>, <%= rat_sighting.created_date %></li>
+<% if @rat_sighting_addresses.class.name == "String" %>
+  <li class="addresses"><%= @rat_sighting_addresses %></li>
+<% else %>
+  <% @rat_sighting_addresses.each do |rat_sighting| %>
+    <li class="addresses"><%= rat_sighting.address %>, <%= rat_sighting.created_date %></li>
+  <% end %>
 <% end %>
