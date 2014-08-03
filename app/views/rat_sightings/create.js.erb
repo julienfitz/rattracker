@@ -1,4 +1,4 @@
 $("#here-are-rats").show();
 $(".addresses").remove();
 $("#rat-sightings").append("<%=j render(partial: 'rat_sightings/rat_sighting') %>");
-$("#form").after("<span id='error'>That address was invalid</span>");
+$("#form").after("<%=j render(partial: 'rat_sightings/error') %>");

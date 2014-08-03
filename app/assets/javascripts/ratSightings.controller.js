@@ -60,7 +60,7 @@ function failsValidation() {
     url: '/rat_sightings',
     type: 'POST',
     dataType: 'JSON',
-    data: {notice: "Address was invalid"},
+    data: {notice: "That address was invalidd"},
     error: function(response){
       eval(response.responseText);
     }
