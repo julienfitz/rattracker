@@ -14,7 +14,7 @@ function codeAddress(address) {
     if (status == google.maps.GeocoderStatus.OK) {
       geocodeToRails(results[0]);
     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
+      failsValidation();
     }
   });
 }
@@ -56,6 +56,10 @@ function geocodeToRails(results) {
     }
 
   });
+}
+
+function failsValidation() {
+  
 }
 
 $(function init() {

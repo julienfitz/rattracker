@@ -2,6 +2,6 @@
   <li class="addresses"><%= @rat_sighting_addresses %></li>
 <% else %>
   <% @rat_sighting_addresses.each do |rat_sighting| %>
-    <li class="addresses"><%= rat_sighting.address %>, <%= rat_sighting.created_date %></li>
+    <li class="addresses"><%= rat_sighting.address %>, <%= rat_sighting.parsed_date %></li>
   <% end %>
 <% end %>
