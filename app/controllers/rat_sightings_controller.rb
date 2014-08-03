@@ -9,7 +9,6 @@ def index
 end
 
 def create
-  flash[:notice] = 
   @rat_sighting_addresses = parseAddress(params)
   respond_to do |format|
     format.js 
