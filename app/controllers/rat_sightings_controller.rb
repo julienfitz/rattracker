@@ -10,6 +10,7 @@ end
 
 def create
   @rat_sighting_addresses = parseAddress(params)
+  @error = params['notice'] if params['notice']
   respond_to do |format|
     format.js 
   end

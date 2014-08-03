@@ -5,6 +5,10 @@ class RatSighting < ActiveRecord::Base
     params_zip == 0 ? "That is not a valid zip code" : self.same_zip_sightings(params_zip)
   end
 
+  def parsed_date
+    self.created_date.split(" ")[0]
+  end
+
   private
     def self.same_zip_sightings(params_zip)
       RatSighting.all.select do |rat_sighting|

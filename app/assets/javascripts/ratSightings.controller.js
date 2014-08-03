@@ -2,6 +2,7 @@ function submitListener() {
   var $submit = $('input[type="submit"]'),
       $address = $('#rat_sightings_address');
   $submit.click(function(event) {
+    eraseError();
     codeAddress($address.val());
     $address.val('');
     event.preventDefault();
@@ -14,12 +15,10 @@ function codeAddress(address) {
     if (status == google.maps.GeocoderStatus.OK) {
       geocodeToRails(results[0]);
     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
+      failsValidation();
     }
   });
 }
-
-
 
 var config = {
   writable: true,
@@ -37,8 +36,6 @@ function createCoordinates(results){
 
 
 function geocodeToRails(results) {
-  console.log(results);
-
   var add_comp = results["address_components"];
 
   $.ajax({
@@ -58,6 +55,23 @@ function geocodeToRails(results) {
   });
 }
 
+function failsValidation() {
+  $.ajax({
+    url: '/rat_sightings',
+    type: 'POST',
+    dataType: 'JSON',
+    data: {notice: "That address was invalidd"},
+    error: function(response){
+      eval(response.responseText);
+    }
+  });
+}
+
+function eraseError() {
+  $("#error").remove();
+}
+
 $(function init() {
   submitListener();
+  eraseError();
 });

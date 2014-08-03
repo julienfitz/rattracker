@@ -1,3 +1,4 @@
 $("#here-are-rats").show();
 $(".addresses").remove();
 $("#rat-sightings").append("<%=j render(partial: 'rat_sightings/rat_sighting') %>");
+$("#form").after("<%=j render(partial: 'rat_sightings/error') %>");
