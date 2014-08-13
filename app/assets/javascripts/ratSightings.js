@@ -16,8 +16,7 @@ $(window).load(function(){
           coords.push([response[i].latitude, response[i].longitude, response[i].created_date, response[i].location_type, response[i].zip, response[i].address]);
           }
         overlayMap(coords);
-      }, 
-      error: function(){alert("failure!");}
+      }
     });
   }
 
