@@ -31,7 +31,7 @@ var xy;
 function createCoordinates(results){
   xy = Object.create(null);
   xy['latitude'] = results['geometry']['location']['k'];
-  xy['longitude'] = results['geometry']['location']['B'];
+  xy['longitude'] = results['geometry']['location']['A'];
 }
 
 
@@ -60,7 +60,7 @@ function failsValidation() {
     url: '/rat_sightings',
     type: 'POST',
     dataType: 'JSON',
-    data: {notice: "That address was invalidd"},
+    data: {notice: "That address was invalid"},
     error: function(response){
       eval(response.responseText);
     }
