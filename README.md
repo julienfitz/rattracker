@@ -37,5 +37,4 @@ Things to do right now. 4pm<br>
 
 BUGS<br>
 1. Google Maps is being weird when you enter an address both locally and on heroku<br>
-2. link in the header to go to the top of the page does not work<br>
 
