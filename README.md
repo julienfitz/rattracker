@@ -34,3 +34,8 @@ Things to do right now. 4pm<br>
 1. Set up the index page with zip input form (view) and display data on show page<br>
 2. Set up the controller with index and show(with params)<br>
 3. Set up the Google Maps API (reverse geocoding) to fill in blank spaces in database.
+
+BUGS<br>
+1. Google Maps is being weird when you enter an address both locally and on heroku<br>
+2. link in the header to go to the top of the page does not work<br>
+
