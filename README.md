@@ -2,7 +2,7 @@
 
 ## Description
 
-Moving to a new apartment in NYC? [Rat Tracker](https://www.rattracker.com) can help! Just enter your address and see a map of recent rat sightings in your area. Sightings are based on data acquired through NYC Open Data.
+Moving to a new apartment in NYC? [Rat Tracker](http://www.rattracker.com) can help! Just enter your address and see a map of recent rat sightings in your area. Sightings are based on data acquired through NYC Open Data.
 
 ## Screenshots
 
