@@ -18,19 +18,19 @@ Want to report a rat sighting in NYC? Call 311!
 ## Features
 
 + Parsed NYC Open Data to populate the app
-+ Implemented a custom interactive map by utilizing the D3 JS library
-+ Incorporated the Google Maps API to convert user input in to latitude and longitudes
-+ Utilized AJAX requests create a seamless, intuitive single page app
++ Implemented a custom interactive map by utilizing the D3 JS library and Google Maps
++ Incorporated the Google Maps API to convert user input into latitude and longitude
++ Utilized AJAX requests to create a seamless, intuitive single page application
 
 ## Usage
 
-Rails app to help users find rat sightings in their area, or to check out rat sightings reported across all five boros of NYC.
+Rails app to help users find rat sightings in their area, or to check out rat sightings reported across all five boroughs of NYC.
 
 ## Authors
 
-Liz Baillie(https://github.com/lizzerdrix)<br>
-Justin Kim(https://github.com/jusjmkim)<br>
-Ben Shore(https://github.com/bshore01)
+[Liz Baillie](https://github.com/lizzerdrix)<br>
+[Justin Kim](https://github.com/jusjmkim)<br>
+[Ben Shore](https://github.com/bshore01)
 
 ## License
 
